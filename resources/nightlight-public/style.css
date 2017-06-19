@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Fira Code';
+    src: url('fonts/FiraCode-Regular.otf') format('opentype');
+}
+html, body, .paren-soup, .CodeMirror {
+    -webkit-font-feature-settings: "liga" on, "calt" on;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: 'Fira Code';
+    font-size: 16px;
+    height: 100%;
+    margin: 0;
+}
+html, body {
+    overflow: hidden;
+}
+.outer-editor {
+    position: fixed;
+    top: 0px;
+    left: 300px;
+    right: 0px;
+    bottom: 0px;
+}
+.toolbar {
+    height: 60px;
+    z-index: 100;
+}
+.paren-soup, .CodeMirror {
+    height: calc(100% - 60px);
+}
+.paren-soup {
+    overflow: auto;
+}
+.paren-soup .content {
+    min-height: 100%;
+    padding-right: 150px;
+}
+.settings {
+    position: fixed;
+    left: 0px;
+    height: 60px;
+    padding: 5px;
+}
+.leftsidebar {
+    position: fixed;
+    width: 300px;
+    left: 0px;
+    top: 60px;
+    bottom: 0px;
+    padding: 5px;
+    overflow: auto;
+}
+.rightsidebar {
+    margin: 5px;
+    position: fixed;
+    width: 150px;
+    right: 0px;
+    top: 50px;
+    bottom: 0px;
+    padding: 5px;
+    overflow: auto;
+}
+li {
+    white-space: nowrap;
+    overflow: hidden;
+}
+.lower-half {
+    position: fixed;
+    left: 300px;
+    top: 50%;
+    border: none;
+    padding-right: 300px;
+    height: 50%;
+    width: 100%;
+}
+.card {
+    float: left;
+    padding: 10px;
+    margin: 10px;
+}
+.overlay {
+    position: fixed;
+    top: 50px;
+    left: 300px;
+    right: 0px;
+    bottom: 0px;
+}
