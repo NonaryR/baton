@@ -55,7 +55,7 @@
     (on-close channel
       (fn [status]
         (when-let [{:keys [in-pipe out-pipe]} (get @state channel)]
-          (doto out-pipe (.write "nightlight.repl/exit\n") (.flush))
+          (doto out-pipe (.write "baton.repl/exit\n") (.flush))
           (.close in-pipe))
         (swap! state dissoc channel)))
     (on-receive channel

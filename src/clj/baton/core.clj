@@ -14,7 +14,7 @@
   (:import [java.io File FilenameFilter]))
 
 (def ^:const max-file-size (* 1024 1024 2))
-(def ^:const pref-file ".nightlight.edn")
+(def ^:const pref-file ".baton.edn")
 
 (defonce web-server (atom nil))
 (defonce options (atom nil))
@@ -63,7 +63,7 @@
   (case (:uri request)
     "/" {:status 200
          :headers {"Content-Type" "text/html"}
-         :body (-> "nightlight-public/index.html" io/resource slurp)}
+         :body (-> "public/index.html" io/resource slurp)}
     "/eval" {:status 200
              :headers {"Content-Type" "text/plain"}
              :body (->> request
@@ -151,7 +151,7 @@
 
 (defn start
   ([opts]
-   (start (wrap-resource handler "nightlight-public") opts))
+   (start (wrap-resource handler "public") opts))
   ([app opts]
    (when-not @web-server
      (->> (merge {:port 0} opts)
@@ -162,6 +162,6 @@
 
 (defn dev-start [opts]
   (when-not @web-server
-    (.mkdirs (io/file "target" "nightlight-public"))
-    (start (wrap-file handler "target/nightlight-public") opts)))
+    (.mkdirs (io/file "target" "public"))
+    (start (wrap-file handler "target/public") opts)))
 

@@ -6,15 +6,18 @@
                  [re-frisk "0.4.5"]
                  [secretary "1.2.3"]
                  [cljs-ajax "0.6.0"]
-                 [org.clojure/test.check "0.9.0" :scope "test"]
-                 [paren-soup "2.8.6" :scope "test"]
-                 [cljs-react-material-ui "0.2.44" :scope "test"]
+                 [cljs-react-material-ui "0.2.44"]
                  [ring "1.5.1"]
                  [ring-basic-authentication "1.0.5"]
                  [http-kit "2.2.0"]
+
+
+                 [org.clojure/test.check "0.9.0" :scope "test"]
+                 [paren-soup "2.8.6" :scope "test"]
                  [compliment "0.3.4"]
                  [eval-soup "1.2.1"]
-                 [cljsjs/codemirror "5.19.0-0" :scope "test"]]
+                 [cljsjs/codemirror "5.19.0-0" :scope "test"]
+                 ]
 
   :plugins [[lein-cljsbuild "1.1.4"]]
   :min-lein-version "2.5.3"
